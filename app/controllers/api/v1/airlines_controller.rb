@@ -1,6 +1,6 @@
 module Api
     module V1
-        class AirlineController < ApplicationController
+        class AirlinesController < ApplicationController
             def index
                 airlines = Airline.all
 
@@ -50,7 +50,7 @@ module Api
             end
 
             def options
-                @options ||* {include: %i[reviews]}
+                @options ||= {include: %i[reviews]}
             end
         end
     end
