@@ -49,6 +49,8 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem "fast_jsonapi"
+gem "react-rails"
+gem "webpacker"
 
 
 group :development, :test do
