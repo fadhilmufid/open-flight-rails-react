@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   ReactDOM.render(
   <Router>  
     <App />
-
   </Router>
    ,
   document.body.appendChild(document.createElement('div')),
