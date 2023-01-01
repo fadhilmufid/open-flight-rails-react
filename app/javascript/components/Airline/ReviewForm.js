@@ -127,7 +127,7 @@ const ReviewForm = (props) =>{
                 </Field>
 
                 <Field>
-                    <input onChange={props.handleChange} value={props.review.title} type="text" name="title" placeholder="Review Description"/>
+                    <input onChange={props.handleChange} value={props.review.description} type="text" name="description" placeholder="Review Description"/>
                 </Field>
 
                 <Field>
