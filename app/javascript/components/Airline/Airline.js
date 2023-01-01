@@ -57,8 +57,9 @@ const Airline = () => {
     const handleSubmit = (e) =>{
         e.preventDefault()
 
-        const csrfToken = document.querySelector('name=csrf-token').content
-        axios.defaults.headers.common['X-CSRF-TOKEn'] = csrfToken
+        const csrfToken = document.querySelector(`[name=csrf-token]`).content
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken
+
 
         const airline_id = airline.data.id
         axios.post('/api/v1/reviews', {review, airline_id})
@@ -68,6 +69,13 @@ const Airline = () => {
             setReview({title: '', description: '', score: 0})
         })
         .catch()
+    }
+
+    const setRating = (score, e) =>{
+        e.preventDefault()
+
+        setReview({...review, score})
+
     }
     
     return (
@@ -89,6 +97,7 @@ const Airline = () => {
                     <ReviewForm
                         handleChange = {handleChange}
                         handleSubmit = {handleSubmit}
+                        setRating = {setRating}
                         attributes={airline.data.attributes}
                         review={review}
                     />
