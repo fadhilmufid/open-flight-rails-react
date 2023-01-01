@@ -66,8 +66,15 @@ const Airline = () => {
         axios.post('/api/v1/reviews', {review, airline_id})
         .then (resp => {
             const included = [...airline.included, resp.data.data]
-            setAirline({...airline, included})
             setReview({title: '', description: '', score: 0})
+            const slug = params.slug
+            const url = `/api/v1/airlines/${slug}`
+
+            axios.get(url)
+            .then (resp => {
+                setAirline(resp.data)
+                setLoaded(true)
+            })
         })
         .catch()
     }

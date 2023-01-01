@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Rating from "../Rating/Rating";
 
 const Card = styled.div`
     border-radius: 4px;
@@ -9,8 +10,11 @@ const Card = styled.div`
     position: relative;
     margin-right: 12px;
 `
-const RatingContainer = styled.div``
-const RatingScore = styled.div``
+const RatingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
 const Title = styled.div`
   padding: 20px 0px 0px 0px;
   font-family: 'Poppins-Bold';
@@ -28,7 +32,7 @@ const Review = (props) =>{
     return(
         <Card>
             <RatingContainer>
-                <RatingScore>{score}</RatingScore>
+                <Rating score = {score}/>
             </RatingContainer>
             <Title>{title}</Title>
             <Description>{description}</Description>
